@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iudd:iudd buildDate="2006-01-19T12:00:00" buildID="112220" schemaVersion="2.0.0" xmlns:J2EERT="http://www.ibm.com/xmlns/prod/autonomic/resourcemodel/J2EE/resourcetypes" xmlns:OSAT="http://www.ibm.com/xmlns/prod/autonomic/resourcemodel/OS/artifacttypes" xmlns:OSRT="http://www.ibm.com/xmlns/prod/autonomic/resourcemodel/OS/resourcetypes" xmlns:iudd="http://www.ibm.com/xmlns/prod/autonomic/solutioninstall/IUDD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/xmlns/prod/autonomic/solutioninstall/IUDD ../iudd/iudd.xsd">
+	<packageIdentity contentType="Component">
+		<name>components/wordPressTheme</name>
+		<version>8.5.0.0</version>
+		<displayName default="components/wordPressTheme" key="d0001"/>
+		<manufacturer>
+			<displayName default="IBM" key="AC_01"/>
+		</manufacturer>
+	</packageIdentity>
+	
+	<topology>
+		<resource id="OS" type="OSRT:OperatingSystem"/>
+	</topology>
+
+	<content xsi:type="iudd:RootIUContent">
+		<rootIU id="components/wordPressTheme">
+			<variables>
+				<parameters>
+					<parameter defaultValue="/usr/dummy.offr.1" name="installLocation"/>
+				</parameters>
+			</variables>
+		</rootIU>
+	</content>
+
+</iudd:iudd>

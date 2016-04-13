@@ -1,0 +1,1 @@
+All ear files that are to be installed automaticly should be stored here.  Note, if a custom task that extends the create-ear extension point exists for the component, then the task must install all the ear files contained within this directory.  

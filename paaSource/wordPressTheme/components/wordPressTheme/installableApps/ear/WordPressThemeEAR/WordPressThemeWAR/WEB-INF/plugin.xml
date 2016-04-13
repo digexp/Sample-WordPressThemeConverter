@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="custom.theme.themes.wordpress" name="Word Press theme Modules" provider-name="IBM" version="1.0.0">
+
+    <extension id="dyncs_wordpress" point="com.ibm.portal.resourceaggregator.module">
+        <module id="dyncs_wordpress">
+
+			<title lang="en" value="Dynamic Content Spots for the Word Press Theme"/>
+			<description lang="en" value="Defines all dynamic content spots for the Word Press Theme. This allows to easily overlay any dynamic content spot through other modules."/>
+
+            <contribution type="dyn-cs">
+
+                <sub-contribution type="markup" ref-id="wordpress_head">
+                    <uri value="res:{war:context-root}/themes/html/dynamicSpots/head.jsp"/>
+                </sub-contribution>
+                <sub-contribution type="markup" ref-id="wordpress_nav">
+                    <uri value="mvc:res:{war:context-root}/themes/html/dynamicSpots/navigation.jsp"/>
+                </sub-contribution>
+
+            </contribution>
+
+        </module>
+    </extension>
+</plugin>

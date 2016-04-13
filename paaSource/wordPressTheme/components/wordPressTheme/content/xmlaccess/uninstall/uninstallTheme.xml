@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request type="update" version="8.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PortalConfig_8.5.xsd">
+    <portal action="locate">
+        <skin action="delete" uniquename="wordPress.skin"/>
+        <theme action="delete" uniquename="wordPress.theme"/>
+    </portal>
+</request>

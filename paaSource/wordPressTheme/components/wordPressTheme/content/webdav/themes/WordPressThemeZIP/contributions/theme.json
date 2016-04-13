@@ -1,0 +1,38 @@
+{
+	"modules": [
+		{
+			"id":"static_wordpress",
+			"contributions": [
+				{
+					"type":"head",
+					"sub-contributions": [
+						{
+							"type":"css",
+							"uris": [
+								{
+									"value":"/css/style.css"
+								},
+								{
+									"value":"/css/rtl.css",
+									"type":"rtl"
+								}
+															]
+						}
+					]
+				}
+			],
+			"titles": [
+				{
+					"value":"Main (Word Press Theme)",
+					"lang":"en"
+				}
+			],
+			"descriptions": [
+				{
+					"value":"Provides theme specific resources such as css styles and core javascript files.",
+					"lang":"en"
+				}
+			]
+		}
+	]
+}

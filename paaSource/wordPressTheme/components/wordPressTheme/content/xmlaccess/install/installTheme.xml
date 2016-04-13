@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request type="update" version="8.0.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PortalConfig_8.0.0.xsd">
+    <portal action="locate">
+        <skin action="update" active="true" context-root="/wordPressTheme" default="false" domain="rel" resourceroot="custom" type="default" uniquename="wordPress.skin">
+            <localedata locale="en">
+                <title>WordPress Skin</title>
+            </localedata>
+            <parameter name="com.ibm.portal.skintype" type="string" update="set"><![CDATA[template]]></parameter>
+            <parameter name="com.ibm.portal.skin.template.file.name.html" type="string" update="set"><![CDATA[skin.html]]></parameter>
+            <parameter name="com.ibm.portal.skin.template.ref" type="string" update="set"><![CDATA[dav:fs-type1/themes/wordPress/skins/Standard/]]></parameter>
+        </skin>
+        <theme action="update" active="true" context-root="/wordPressTheme" default="false" defaultskinref="wordPress.skin" domain="rel" resourceroot="dynamicSpots" uniquename="wordPress.theme">
+            <localedata locale="en">
+                <title>WordPress Theme</title>
+                <description/>
+            </localedata>
+            <allowed-skin skin="wordPress.skin" update="set"/>
+            <parameter name="com.ibm.portal.friendly.name" type="string" update="set"><![CDATA[wordPress]]></parameter>
+            <parameter name="com.ibm.portal.layout.template.href" type="string" update="set"><![CDATA[dav:fs-type1/themes/wordPress/layout-templates/1Column/]]></parameter>
+            <parameter name="com.ibm.portal.theme.template.ref" type="string" update="set"><![CDATA[dav:fs-type1/themes/wordPress/]]></parameter>
+            <parameter name="resourceaggregation.profile" type="string" update="set"><![CDATA[profiles/profile_deferred.json]]></parameter>
+            <parameter name="resourceaggregation.autoLoadPortletCapabilities" type="string" update="set"><![CDATA[true]]></parameter>
+        </theme>
+    </portal>
+</request>

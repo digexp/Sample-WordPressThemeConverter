@@ -1,0 +1,1 @@
+Place zip files containing portal skins that need to be uploaded to the WebSphere portal webdav file store in this directory.

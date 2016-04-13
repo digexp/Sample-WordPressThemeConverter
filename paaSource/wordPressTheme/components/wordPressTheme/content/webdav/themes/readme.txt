@@ -1,0 +1,1 @@
+Place zip files containing static themes that need to be uploaded to the WebSphere portal webdav file system in this directory.
