@@ -440,7 +440,7 @@ function createOutput() {
 		if (err) return console.error("Cannot copy: 'output.html' to 'output/output_'+capitalCamelCase+'.html': " + err);
 		console.log("\nWriting output information to 'output/output_"+capitalCamelCase+".html'\n");
 		replaceInFiles(['output/output_'+capitalCamelCase+'.html'], 
-			[/wordPress/g, /WordPress/g, /wordpress/g], 
-			[camelCase, capitalCamelCase, lowerCase]);
+			[/wordPress/g, /WordPress/g, /wordpress/g, /WP_LINK/g], 
+			[camelCase, capitalCamelCase, lowerCase, 'creating-an-ibm-digital-experience-v8-5-theme-from-a-wordpress-theme']);
 	});
 }

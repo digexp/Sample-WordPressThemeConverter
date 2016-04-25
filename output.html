@@ -40,13 +40,13 @@
 	<li>The script automatically adds any <code>/images/</code> or <code>/img/</code> folders into the DX theme automatically. If the WordPress them requires other image folders besides these, move them into: <code>dav:fs-type1/themes/wordPress/css/</code></li>
 	<li>The script created a dynamic navigation JSP file based on the WordPress theme input. This file can be edited here: <code>&lt;wp_profile_root&gt;/installedApps/<em>node</em>/WordPressTheme.ear/wordPressTheme.war/themes/html/dynamicSpots/navigation.jsp</code></li>
 	<li>If desired, edit the theme's <code>&lt;head&gt;</code> section here: <code>&lt;wp_profile_root&gt;/installedApps/<em>node</em>/WordPressTheme.ear/wordPressTheme.war/themes/html/dynamicSpots/head.jsp</code></li>
-	<li>The script found straight-forward pieces of PHP code in the theme and either removed or replaced them with appropriate DX theme code. However, the bulk of the PHP code must be handled manually. Use these <a href="https://developer.ibm.com/digexp/docs/docs/themes/creating-an-ibm-digital-experience-v8-5-theme-from-a-wordpress-theme/#phpremove">references</a> to clean up the PHP in the following files:</li>
+	<li>The script found straight-forward pieces of PHP code in the theme and either removed or replaced them with appropriate DX theme code. However, the bulk of the PHP code must be handled manually. Use these <a href="https://developer.ibm.com/digexp/docs/docs/themes/WP_LINK/#phpremove">references</a> to clean up the PHP in the following files:</li>
 		<ul>
 			<li><code>dav:fs-type1/themes/wordPress/theme.html</code></li>
 			<li><code>dav:fs-type1/themes/wordPress/skins/Standard/skin.html</code></li>
 		</ul>
 	<li>The script added jquery to the theme. If this is not needed, remove it from here: <code>dav:fs-type1/themes/wordPress/profiles/profile_deferred.json</code></li>
-	<li>See <a href="https://developer.ibm.com/digexp/docs/docs/themes/creating-an-ibm-digital-experience-v8-5-theme-from-a-wordpress-theme/#js">here</a> for adding extra JS and CSS resources to the DX theme.</li>
+	<li>See <a href="https://developer.ibm.com/digexp/docs/docs/themes/WP_LINK/#js">here</a> for adding extra JS and CSS resources to the DX theme.</li>
 </ol>
 
 <h3>PAA uninstall instructions:</h3>
