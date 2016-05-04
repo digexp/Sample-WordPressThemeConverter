@@ -297,18 +297,18 @@ function processMarkup() {
 		'</head>'
 	];
 
-	var headerRegex = /<\?php\s+?get_header\(\);\s*?\?>/;
-	var footerRegex = /<\?php\s+?get_footer\(\);\s*?\?>/;
-	var sidebarRegex = /<\?php\s+?get_sidebar\(\);\s*?\?>/;
+	var headerRegex = /get_header\(\);\s*?\?>/;
+	var footerRegex = /get_footer\(\);\s*?\?>/;
+	var sidebarRegex = /get_sidebar\(\);\s*?\?>/;
 	var theLoopRegex = /<\?php\s*?if\s*?\(\s*?have_posts\(\)\s*?\)[\s\S]+?endwhile;[\s\S]+?endif;\s*?\?>/;
 	var navRegex = /wp_nav_menu\([\s\S]*?\);[\s\S]*?\?>/;
 
 	var themeHtmlPath = pathPrefix+'/content/webdav/themes/WordPressThemeZIP/theme.html';
 	if(verbose) console.log("\nCreating theme.html contents from header.php, footer.php and sidebar.php");
 	var themeContents = fs.readFileSync(wordPressThemeDir+'index.php', 'utf8');
-	if(themeContents.match(headerRegex)) themeContents = themeContents.replace(headerRegex, fs.readFileSync(wordPressThemeDir+'header.php', 'utf8'));
-	if(themeContents.match(footerRegex)) themeContents = themeContents.replace(footerRegex, fs.readFileSync(wordPressThemeDir+'footer.php', 'utf8'));
-	if(themeContents.match(sidebarRegex)) themeContents = themeContents.replace(sidebarRegex, fs.readFileSync(wordPressThemeDir+'sidebar.php', 'utf8'));
+	if(themeContents.match(headerRegex)) themeContents = themeContents.replace(headerRegex, '?>'+fs.readFileSync(wordPressThemeDir+'header.php', 'utf8'));
+	if(themeContents.match(footerRegex)) themeContents = themeContents.replace(footerRegex, '?>'+fs.readFileSync(wordPressThemeDir+'footer.php', 'utf8'));
+	if(themeContents.match(sidebarRegex)) themeContents = themeContents.replace(sidebarRegex, '?>'+fs.readFileSync(wordPressThemeDir+'sidebar.php', 'utf8'));
 
 	// gather navigation information
 	var navContents = themeContents.match(navRegex);
