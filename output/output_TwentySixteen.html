@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Instructions :: TwentySixteen Theme</title>
+</head>
+<body>
+<h3>Naming:</h3>
+<ul>
+	<li>theme name: <code>TwentySixteen Theme</code></li>
+	<li>theme unique name: <code>twentySixteen.theme</code></li>
+	<li>skin name: <code>TwentySixteen Skin</code></li>
+	<li>skin unique name: <code>twentySixteen.skin</code></li>
+</ul>
+
+<h3>Dynamic content:</h3>
+<ul>
+	<li>dynamic contents location: <code>&lt;wp_profile_root&gt;/installedApps/<em>node</em>/TwentySixteenTheme.ear</code></li>
+	<li>dynamic content EAR display name: <code>TwentySixteenTheme</code></li>
+	<li>dynamic content WAR context root: <code>/twentySixteenTheme</code></li>
+	<li>dynamic content spots module name: <code>dyncs_twentysixteen</code></li>
+	<li>head dynamic content spot id: <code>twentysixteen_head</code></li>
+	<li>navigation dynamic content spot id: <code>twentysixteen_nav</code></li>
+</ul>
+
+<h3>Static content:</h3>
+<ul>
+	<li>static contents location: <code>dav:fs-type1/themes/twentySixteen/</code></li>
+	<li>static content module name: <code>static_twentysixteen</code></li>
+</ul>
+
+<h3>PAA installation instructions:</h3>
+<ol>
+	<li>Copy <code>output/twentySixteenTheme.paa</code> to your Portal server. In the example below, the file was copied to the <code>/opt</code> directory.</li>
+	<li>To install the paa, open a command shell and go to the ConfigEngine directory, for example: <code>/opt/WebSphere/wp_profile/ConfigEngine</code></li>
+	<li>Run these two tasks, remembering to provide the appropriate passwords:
+		<ul>
+			<li><code>./ConfigEngine.sh install-paa -DPAALocation=/opt/twentySixteenTheme.paa -DWasPassword=<em>WAS_PASSWORD</em> -DPortalAdminPwd=<em>PORTAL_PASSWORD</em></code></li>
+			<li><code>./ConfigEngine.sh deploy-paa -DappName=twentySixteenTheme -DWasPassword=<em>WAS_PASSWORD</em> -DPortalAdminPwd=<em>PORTAL_PASSWORD</em></code></li>
+		</ul>
+	</li>
+</ol>
+
+<h3>Next steps:</h3>
+<ol>
+	<li>If the TwentySixteen <code>style.css</code> file contains import statements, add them to the DX theme relative to: <code>dav:fs-type1/themes/twentySixteen/css/style.css</code></li>
+	<li>The script automatically adds any <code>/images/</code> or <code>/img/</code> folders into the DX theme automatically. If the TwentySixteen them requires other image folders besides these, move them into: <code>dav:fs-type1/themes/twentySixteen/css/</code></li>
+	<li>The script created a dynamic navigation JSP file based on the TwentySixteen theme input. This file can be edited here: <code>&lt;wp_profile_root&gt;/installedApps/<em>node</em>/TwentySixteenTheme.ear/twentySixteenTheme.war/themes/html/dynamicSpots/navigation.jsp</code></li>
+	<li>If desired, edit the theme's <code>&lt;head&gt;</code> section here: <code>&lt;wp_profile_root&gt;/installedApps/<em>node</em>/TwentySixteenTheme.ear/twentySixteenTheme.war/themes/html/dynamicSpots/head.jsp</code></li>
+	<li>The script found straight-forward pieces of PHP code in the theme and either removed or replaced them with appropriate DX theme code. However, the bulk of the PHP code must be handled manually. Use these <a href="https://developer.ibm.com/digexp/docs/docs/themes/creating-an-ibm-digital-experience-v8-5-theme-from-a-wordpress-theme/#phpremove">references</a> to clean up the PHP in the following files:</li>
+		<ul>
+			<li><code>dav:fs-type1/themes/twentySixteen/theme.html</code></li>
+			<li><code>dav:fs-type1/themes/twentySixteen/skins/Standard/skin.html</code></li>
+		</ul>
+	<li>The script added jquery to the theme. If this is not needed, remove it from here: <code>dav:fs-type1/themes/twentySixteen/profiles/profile_deferred.json</code></li>
+	<li>See <a href="https://developer.ibm.com/digexp/docs/docs/themes/creating-an-ibm-digital-experience-v8-5-theme-from-a-wordpress-theme/#js">here</a> for adding extra JS and CSS resources to the DX theme.</li>
+</ol>
+
+<h3>PAA uninstall instructions:</h3>
+<ol>
+	<li>Open a command shell and go to the ConfigEngine directory, for example: <code>/opt/WebSphere/wp_profile/ConfigEngine</code></li>
+	<li>Run these two tasks, remembering to provide the appropriate passwords:</li>
+		<ul>
+			<li><code>./ConfigEngine.sh remove-paa -DappName=twentySixteenTheme -DforceRemove=true -DWasPassword=<em>WAS_PASSWORD</em> -DPortalAdminPwd=<em>PORTAL_PASSWORD</em></code></li>
+			<li><code>./ConfigEngine.sh uninstall-paa -DappName=twentySixteenTheme -DforceUninstall=true -DWasPassword=<em>WAS_PASSWORD</em> -DPortalAdminPwd=<em>PORTAL_PASSWORD</em></code></li>
+		</ul>
+</ol>
+</body>
+</html>
